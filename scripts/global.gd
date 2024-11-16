@@ -18,7 +18,6 @@ var first_run = true
 
 func _ready() -> void:
 	var err = config.load(save_path)
-	print(err)
 	if err != OK:
 		on_savefile_loaded.emit()
 		return

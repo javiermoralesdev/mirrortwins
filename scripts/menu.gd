@@ -6,6 +6,8 @@ func _ready() -> void:
 	if Global.first_run:
 		Global.first_run = false
 		$AnimationPlayer.play("fade_to_normal")
+	if OS.get_name() == "Web":
+		$QuitButton.visible = false
 
 func play():
 	Transition.transition()
