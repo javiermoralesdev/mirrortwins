@@ -1,0 +1,195 @@
+[gd_scene load_steps=9 format=3 uid="uid://dabxkpm2kimx8"]
+
+[ext_resource type="Texture2D" uid="uid://cso01umo41vub" path="res://sprites/menu.jpg" id="1_5gfeq"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_kp7te"]
+[ext_resource type="Theme" uid="uid://dpnle4yptd68c" path="res://styles/button.tres" id="2_7muq8"]
+[ext_resource type="AudioStream" uid="uid://31uo2hvdyf48" path="res://music/menu.ogg" id="4_rnlsx"]
+[ext_resource type="Texture2D" uid="uid://cya1wfopcnko4" path="res://images/banner.png" id="5_31es5"]
+
+[sub_resource type="Animation" id="Animation_m3jxa"]
+resource_name = "fade_to_normal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Starter:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Starter:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_2u1kl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Starter:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Starter:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ldqyu"]
+_data = {
+"RESET": SubResource("Animation_2u1kl"),
+"fade_to_normal": SubResource("Animation_m3jxa")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kp7te")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5gfeq")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 112.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 75
+text = "MirrorTwins"
+horizontal_alignment = 1
+
+[node name="ScoreText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 212.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "MirrorTwins"
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -442.0
+offset_top = -112.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Created by Javier Morales for the Godot Wild Jam #75"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -130.0
+offset_right = 238.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7muq8")
+theme_override_font_sizes/font_size = 30
+text = "mm_play"
+
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -22.0
+offset_right = 238.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7muq8")
+theme_override_font_sizes/font_size = 30
+text = "mm_credits"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -105.0
+offset_right = 285.0
+offset_bottom = -30.0
+grow_vertical = 0
+theme = ExtResource("2_7muq8")
+theme_override_font_sizes/font_size = 30
+text = "mm_close"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(402, 338)
+stream = ExtResource("4_rnlsx")
+autoplay = true
+
+[node name="Starter" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_31es5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ldqyu")
+}
+
+[connection signal="pressed" from="PlayButton" to="." method="play"]
+[connection signal="pressed" from="CreditsButton" to="." method="credits"]
+[connection signal="pressed" from="QuitButton" to="." method="quit"]

@@ -1,0 +1,22 @@
+id,en,es
+mm_play,Play,Jugar
+mm_close,Quit,Salir
+mm_credits,Credits,Créditos
+menu_gameover,Game Over,Fin de partida
+menu_score,Score: ,Puntuación: 
+menu_hscore,High Score: ,Máxima Puntuación: 
+menu_retry,Retry,Reintentar
+menu_mm,Main Menu,Menú Principal
+mm_back,Back,Atrás
+dialog1,It is said that lords have pretty exotic tastes,Todos sabemos que los monarcas tienen gustos extravagantes.
+dialog2,"In this case, the kings of a nameless kingdom decided to have fun with their knight","En este caso, los monarcas de un reino sin nombre decidieron divertirse con su caballero"
+dialog3,"Using dark magic, they materialised the reflection of the knight","Mediante magia oscura, materializaron el reflejo del noble caballero"
+dialog4,It will imitate all of his movements upside down,"Imitará todos sus movimientos, pero al revés"
+dialog5,They must collect all the apples that they throw at them while avoiding the circular saws,Deben recoger las manzanas que les lanzen mientras evitan las sierras
+dialog6,"Nontheless, the knight is able to control his reflection and avoid touching the saws","No obstante, el caballero es capaz de controlar su sombra e impedir que toque las sierras"
+dialog7,¿Will he survive?,¿Será capaz de resistir?
+tut_move,Move characters,Mover personaje
+tut_freezeup,Freeze reflection,Detener reflejo
+tut_freezedown,Freeze knight,Detener caballero
+intro_skip,Press escape or start to skip intro,Pulsa escape o start para saltar la introducción
+intro_continue,Press enter or A to proceed,Pulsa enter o A para continuar

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca27ggvpnrv0k"]
+
+[ext_resource type="Texture2D" uid="uid://cso01umo41vub" path="res://sprites/menu.jpg" id="1_45wi5"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_cdpkq"]
+[ext_resource type="Theme" uid="uid://dpnle4yptd68c" path="res://styles/button.tres" id="3_ewsar"]
+[ext_resource type="AudioStream" uid="uid://boebubis8cfhh" path="res://music/credits.ogg" id="4_lhas3"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cdpkq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_45wi5")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -82.0
+offset_right = 243.0
+offset_bottom = -31.0
+grow_vertical = 0
+theme = ExtResource("3_ewsar")
+theme_override_font_sizes/font_size = 30
+text = "mm_back"
+
+[node name="CreditsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1273.0
+offset_bottom = 627.0
+theme_override_font_sizes/font_size = 25
+text = "Created by Javier Morales for the Godot Wild Jam #75
+
+Retro Collection 1 by Xiko__ -- https://freesound.org/s/711127/ -- License: Attribution 4.0
+
+Music by Patrick de Arteaga (patrickdearteaga.com)
+"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lhas3")
+autoplay = true
+
+[connection signal="pressed" from="BackButton" to="." method="go_back"]

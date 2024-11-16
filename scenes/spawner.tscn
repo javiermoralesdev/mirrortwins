@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfcctjb6x2m8o"]
+
+[ext_resource type="Texture2D" uid="uid://csgbdkofdncbk" path="res://sprites/spawner.png" id="1_hpixw"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="2_41l83"]
+
+[node name="Spawner" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_hpixw")
+script = ExtResource("2_41l83")
+
+[node name="SpawnerTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="SpawnerTimer" to="." method="_on_spawner_timer_timeout"]

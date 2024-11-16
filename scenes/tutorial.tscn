@@ -1,0 +1,167 @@
+[gd_scene load_steps=13 format=3 uid="uid://c46suiolnrsb"]
+
+[ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_nfu4o"]
+[ext_resource type="Texture2D" uid="uid://lqb23kixx542" path="res://sprites/background-tutorial.jpg" id="2_5krpi"]
+[ext_resource type="Texture2D" uid="uid://bx404xd244vj8" path="res://images/A-Key.png" id="3_2u7be"]
+[ext_resource type="Texture2D" uid="uid://b3rj0b3syc15x" path="res://images/D.png" id="4_pi5ql"]
+[ext_resource type="Texture2D" uid="uid://bu7rfuit3osmf" path="res://images/CONTROLPADLEFT.png" id="5_u7yfe"]
+[ext_resource type="Texture2D" uid="uid://dvxygpvwojjec" path="res://images/CONTROLPADRIGHT.png" id="6_hej2x"]
+[ext_resource type="Texture2D" uid="uid://r4c5mqocls1o" path="res://images/X.png" id="7_7u2qk"]
+[ext_resource type="Texture2D" uid="uid://dg03lm56arj70" path="res://images/ARROWUP.png" id="8_vnub4"]
+[ext_resource type="Texture2D" uid="uid://d1hx2qol7nggr" path="res://images/A.png" id="9_4y4yd"]
+[ext_resource type="Texture2D" uid="uid://b4gr2wfnj8v4g" path="res://images/ARROWDOWN.png" id="10_d1k2o"]
+[ext_resource type="Theme" uid="uid://dpnle4yptd68c" path="res://styles/button.tres" id="11_3bjvu"]
+[ext_resource type="AudioStream" uid="uid://boebubis8cfhh" path="res://music/credits.ogg" id="12_n62qt"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nfu4o")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5krpi")
+
+[node name="A Key" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 82.0
+texture = ExtResource("3_2u7be")
+
+[node name="D Key" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_right = 169.0
+offset_bottom = 83.0
+texture = ExtResource("4_pi5ql")
+
+[node name="LeftButton" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = -1.0
+offset_right = 322.0
+offset_bottom = 73.0
+texture = ExtResource("5_u7yfe")
+
+[node name="RightButton" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 339.0
+offset_top = -1.0
+offset_right = 413.0
+offset_bottom = 73.0
+texture = ExtResource("6_hej2x")
+
+[node name="XButton" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 106.0
+offset_right = 366.0
+offset_bottom = 180.0
+texture = ExtResource("7_7u2qk")
+
+[node name="UpButton" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 106.0
+offset_right = 116.0
+offset_bottom = 180.0
+texture = ExtResource("8_vnub4")
+
+[node name="Slash1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 179.0
+offset_top = -35.0
+offset_right = 219.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 100
+text = "/"
+
+[node name="Slash2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 60.0
+offset_right = 215.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 100
+text = "/"
+
+[node name="TextMove" type="Label" parent="."]
+layout_mode = 0
+offset_left = 441.0
+offset_top = -2.0
+offset_right = 1271.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 75
+text = "tut_move"
+
+[node name="TextFreezeUp" type="Label" parent="."]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 93.0
+offset_right = 1267.0
+offset_bottom = 230.0
+theme_override_font_sizes/font_size = 75
+text = "tut_freezeup"
+
+[node name="AButton" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 200.0
+offset_right = 366.0
+offset_bottom = 274.0
+texture = ExtResource("9_4y4yd")
+
+[node name="DownButton" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 200.0
+offset_right = 116.0
+offset_bottom = 274.0
+texture = ExtResource("10_d1k2o")
+
+[node name="Slash3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 154.0
+offset_right = 215.0
+offset_bottom = 291.0
+theme_override_font_sizes/font_size = 100
+text = "/"
+
+[node name="FreezeDownText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 187.0
+offset_right = 1267.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 75
+text = "tut_freezedown"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -68.0
+offset_right = 216.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme = ExtResource("11_3bjvu")
+theme_override_font_sizes/font_size = 25
+text = "mm_play"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_n62qt")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="go_back"]
