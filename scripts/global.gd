@@ -27,3 +27,8 @@ func _ready() -> void:
 func save():
 	config.set_value(player_section, hscore_key, high_score)
 	config.save(save_path)
+	
+func compare_and_save(score: int):
+	if score > high_score:
+		high_score = score
+		save()

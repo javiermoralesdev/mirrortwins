@@ -15,6 +15,7 @@ run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://images/banner.png"
 config/icon="res://images/logo.png"
+config/windows_native_icon="res://images/icon.ico"
 
 [autoload]
 

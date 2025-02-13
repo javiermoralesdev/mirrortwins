@@ -5,9 +5,7 @@ func _ready() -> void:
 
 func appear(score: int):
 	$GameOverAnim.play("show")
-	if score > Global.high_score:
-		Global.high_score = score
-		Global.save()
+	Global.compare_and_save(score)
 	%LeftLabel.visible = false
 	%RightLabel.visible = false
 	$ScoreLabel.text = tr("menu_score") + str(score)

@@ -49,6 +49,9 @@ func end_game():
 	$EnemyTimer.stop()
 	%GameOver.appear(score)
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		Global.compare_and_save(score)
 
 func _on_difficulty_timer_timeout() -> void:
 	$EnemyTimer.wait_time -= 0.1

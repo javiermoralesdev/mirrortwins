@@ -31,6 +31,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func move(direction: float):
+	if get_parent().dead:
+		return
 	if direction == 1:
 		$PlayerSprite.flip_h = inverted
 	if direction == -1:
